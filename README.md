@@ -1,7 +1,7 @@
 
 # 🇻🇳 Vietnam StableCoin (VNDC)
 
-A decentralized overcollateralized stablecoin protocol inspired by MakerDAO's DAI, built on Ethereum-compatible EVM chains. This protocol enables users to mint a stablecoin (VNDC) pegged to the Vietnamese đồng (VND) using overcollateralized assets such as ETH and WBTC.
+A decentralized overcollateralized stablecoin protocol inspired by MakerDAO's DAI, built on Ethereum-compatible EVM chains. This protocol enables users to mint a stablecoin (VNDC) pegged to the USD using overcollateralized assets such as ETH and WBTC.
 
 ---
 
