@@ -1,66 +1,100 @@
-## Foundry
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+# 🇻🇳 Vietnam StableCoin (VNDC)
 
-Foundry consists of:
+A decentralized overcollateralized stablecoin protocol inspired by MakerDAO's DAI, built on Ethereum-compatible EVM chains. This protocol enables users to mint a stablecoin (VNDC) pegged to the Vietnamese đồng (VND) using overcollateralized assets such as ETH and WBTC.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+---
 
-## Documentation
+## 🚀 Features
 
-https://book.getfoundry.sh/
+- 🪙 Mint VNDC (Vietnamese Stablecoin)
+- 🔐 Overcollateralized CDP (Collateralized Debt Position)
+- 📉 Real-time price feeds using Chainlink Oracles
+- 🔄 Invariant testing to ensure system safety
+- 🧪 Foundry-based testing suite
 
-## Usage
+---
 
-### Build
+## 🧱 Core Contracts
 
-```shell
-$ forge build
+| Contract/File              | Description                                      |
+|---------------------------|--------------------------------------------------|
+| `VietNamStableCoin.sol`   | ERC20-compliant VNDC token contract              |
+| `VNDCEngine.sol`          | Core logic for collateral deposit, minting, health factor management |
+| `OracleLib.sol`           | Chainlink oracle timeout checks and helpers      |
+| `HelperConfig.s.sol`      | Script for dynamic configuration per network     |
+| `DeployVNDC.s.sol`        | Script for automated deployment of the protocol |
+| `Handler.t.sol`           | Property-based fuzzing test handler              |
+| `InvariantTest.t.sol`     | Invariant tests to ensure protocol safety        |
+| `VNDCEngineTest.t.sol`    | Unit tests for the engine contract               |
+
+---
+
+## 🛠️ Installation
+
+```bash
+git clone https://github.com/your-username/vietnam-stablecoin.git
+cd vietnam-stablecoin
+
+# Install dependencies
+forge install
+
+# Build the project
+forge build
 ```
 
-### Test
+---
 
-```shell
-$ forge test
+## 🧪 Running Tests
+
+```bash
+# Run all unit tests
+forge test
+
+# Run with detailed logs
+forge test -vvvv
+
+# Run invariant (property-based) tests
+forge test --match-path test/foundry/InvariantTest.t.sol
 ```
 
-### Format
+---
 
-```shell
-$ forge fmt
+## ⚙️ Deployment
+
+Deployment scripts are written using Foundry's scripting system.
+
+```bash
+# Example deployment command (Sepolia)
+forge script script/DeployVNDC.s.sol --rpc-url $SEPOLIA_RPC_URL --broadcast --verify
 ```
 
-### Gas Snapshots
+Set your environment variables in a `.env` file or export them manually before running.
 
-```shell
-$ forge snapshot
-```
+---
 
-### Anvil
+## 📦 Requirements
 
-```shell
-$ anvil
-```
+- [Foundry](https://book.getfoundry.sh/getting-started/installation) (`forge`, `cast`)
+- Solidity ^0.8.18
+- Chainlink Price Feeds
+- EVM-compatible chain (e.g., Sepolia, Base, etc.)
 
-### Deploy
+---
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+## 📄 License
 
-### Cast
+This project is licensed under the MIT License. See `LICENSE` for details.
 
-```shell
-$ cast <subcommand>
-```
+---
 
-### Help
+## 🤝 Contribution
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Feel free to fork, open issues, and submit PRs to contribute to the development of a decentralized stablecoin ecosystem for Vietnam.
+
+---
+
+## 👨‍💻 Author
+
+Developed by **Huy Phạm**.  
+For any collaboration, reach out at: [GitHub](https://github.com/ErwinPham)
